@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { CartProvider } from "./CartContext";
+import CartPage from "./CartPage";
+import Contact from "./Contact";
+import Login from "./Login";
+import NavBar from "./NavBar";
+import Home from "./Pages/Home";
+import ProductsListing from "./Pages/ProductsListing";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Register from "./Register";
+import Checkout from "./Checkout";
+import ThankYou from "./ThankYou";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // also required!
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CartProvider>
+        <Router>
+          <NavBar />
+
+          {/* Toast container should be OUTSIDE Routes */}
+          <ToastContainer position="top-right" autoClose={2000} />
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<ProductsListing />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/thankyou" element={<ThankYou />} />
+          </Routes>
+        </Router>
+      </CartProvider>
     </div>
   );
 }
