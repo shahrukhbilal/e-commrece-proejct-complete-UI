@@ -2,12 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap ka import
 import './Home.css'; // Aapka external CSS
 import image from "../assets/Taobao Banner Clothing Background, Color, Warm, Flat Background Image And Wallpaper for Free Download.jpeg";
-import image2 from "../assets/Earphone.jpeg";
-import image3 from "../assets/Pure Black perfume.jpeg";
-import image4 from "../assets/Face wash.jpeg";
-import BannerSlider from './BannerSlider';
+
 import logoimg from "../assets/Orange E-commerce Online Store Logo.png"
-import Contact from '../Contact';
+
 import { Link } from 'react-router-dom';
 
 
